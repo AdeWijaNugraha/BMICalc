@@ -17,11 +17,11 @@ class Controller_imt extends CI_Controller {
 		$tb = $tbCm/100;
 		$bb = $this->input->post('bb');
 		$kondisi = $this->input->post('kondisi');
-		$imt = 0;
-		$bbi = 0;
-		$interpretasi = "";
-		$saran = 0;
-		$sarans = "";
+		// $imt = 0;
+		// $bbi = 0;
+		// $interpretasi = "";
+		// $saran = 0;
+		// $sarans = "";
 
 		if ($usia < 18) {
 			$param = array(
@@ -72,32 +72,39 @@ class Controller_imt extends CI_Controller {
 			}
 		}
 
-		$data = array(
-			'nama'			=> $nama,
-			'jenis_kelamin'	=> $jk,
-			'usia'			=> $usia,
-			'tinggi'		=> $tb,
-			'berat'			=> $bb,
-			'imt'			=> $imt,
-			'bbi'			=> $bbi,
-			'interpretasi'	=> $interpretasi,
-			'saran'			=> $saran,
-		);
+		
 
-		$this->Model_imt->simpanData($data, "user");
+		if ($usia < 18) {
+		} else {
+			if ($kondisi ==! null) {
+			} else {
+				$data = array(
+					'nama'			=> $nama,
+					'jenis_kelamin'	=> $jk,
+					'usia'			=> $usia,
+					'tinggi'		=> $tb,
+					'berat'			=> $bb,
+					'imt'			=> $imt,
+					'bbi'			=> $bbi,
+					'interpretasi'	=> $interpretasi,
+					'saran'			=> $saran,
+				);
+				$this->Model_imt->simpanData($data, "user");
 
-		if ($saran == 1) {
-			$sarans = "Indeks massa tubuh Anda bernilai ".$imt.", IMT tersebut tergolong dalam kelas ".$interpretasi." dan termasuk dalam kategori kurus. Makan secara teratur dengan gizi seimbang dan lebih banyak dari biasanya. Tidak lupa olahraga yang teratur. Berat badan ideal Anda adalah ".$bbi.".";
-		} elseif ($saran == 2) {
-			$sarans = "Indeks massa tubuh Anda bernilai ".$imt.", IMT tersebut tergolong dalam kelas ".$interpretasi." dan termasuk dalam kategori normal. Pertahankan kebiasaan makan sehari-hari dengan susunan menu gizi seimbang, pertahankan kebiasaan olahraga yang teratur dan tetap melakukan kebiasaan fisik setiap hari. Berat badan ideal Anda adalah ".$bbi.".";
-		} elseif ($saran == 3) {
-			$sarans = "Indeks massa tubuh Anda bernilai ".$imt.", IMT tersebut tergolong dalam kelas ".$interpretasi." dan termasuk dalam kategori gemuk. Makan secara teratur dengan gizi seimbang dan jumlahnya kurang dari biasanya. Tidak lupa olahraga yang teratur juga. Berat badan ideal Anda adalah ".$bbi.".";
+				if ($saran == 1) {
+					$sarans = "Indeks massa tubuh Anda bernilai ".$imt.", IMT tersebut tergolong dalam kelas ".$interpretasi." dan termasuk dalam kategori kurus. Makan secara teratur dengan gizi seimbang dan lebih banyak dari biasanya. Tidak lupa olahraga yang teratur. Berat badan ideal Anda adalah ".$bbi.".";
+				} elseif ($saran == 2) {
+					$sarans = "Indeks massa tubuh Anda bernilai ".$imt.", IMT tersebut tergolong dalam kelas ".$interpretasi." dan termasuk dalam kategori normal. Pertahankan kebiasaan makan sehari-hari dengan susunan menu gizi seimbang, pertahankan kebiasaan olahraga yang teratur dan tetap melakukan kebiasaan fisik setiap hari. Berat badan ideal Anda adalah ".$bbi.".";
+				} elseif ($saran == 3) {
+					$sarans = "Indeks massa tubuh Anda bernilai ".$imt.", IMT tersebut tergolong dalam kelas ".$interpretasi." dan termasuk dalam kategori gemuk. Makan secara teratur dengan gizi seimbang dan jumlahnya kurang dari biasanya. Tidak lupa olahraga yang teratur juga. Berat badan ideal Anda adalah ".$bbi.".";
+				}
+
+				$param = array(
+					'keterangan'	=> $sarans
+				);
+				$this->load->view('imt', $param);
+			}
 		}
-
-		$param = array(
-			'keterangan'	=> $sarans
-		);
-		$this->load->view('imt', $param);
 	}
 
 	public function about(){

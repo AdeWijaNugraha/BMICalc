@@ -44,7 +44,7 @@
             ?>  
           ]);  
         var options = {   
-          pieHole: 0.5
+          pieHole: 0.4
         };  
         var chart = new google.visualization.PieChart(document.getElementById('piechart'));  
         chart.draw(data, options);  

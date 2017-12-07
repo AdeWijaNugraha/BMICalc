@@ -107,10 +107,10 @@
 				</div>
 				<div class="col-md-4 animate-box">
 					<a href="#" class="item-grid text-center" style="border-radius: 5px;">
-						<div class="image" style="background-image: url(<?php echo base_url('assets'); ?>/images/kiki.png);border-radius: 5px;"></div>
+						<div class="image" style="background-image: url(<?php echo base_url('assets'); ?>/images/kiki1.png);border-radius: 5px;"></div>
 						<div class="v-align">
 							<div class="v-align-middle">
-								<h3 class="title" style="color: #414347; font-size: 25px;">Lailatul Rizqi Ramdhani</h3>
+								<h3 class="title" style="color: #414347; font-size: 25px;">Lailatul Rizqi R.</h3>
 								<h5 class="category" style="color: #5b5e63; font-size: 18px;">155150201111023</h5>
 							</div>
 						</div>
