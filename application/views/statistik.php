@@ -56,6 +56,7 @@
 
 
     <div id="fh5co-page">
+    <div id="fh5co-page">
     <header role="banner" >
       <nav class="navbar navbar-inverse" style="width: 100%;margin: 0;z-index:1000;position:fixed;background-color: rgba(26, 29, 33, 0.95); font-size: 15px;">
         <div class="container-fluid">
@@ -66,13 +67,13 @@
             <ul class="nav navbar-nav">
             </ul>
             <ul class="nav navbar-nav navbar-right">
-              <li><a href="#" id="hitungIMTHead">Hitung Indeks Massa Tubuh</a></li>
+              <li><a href="#" data-toggle="modal" data-target="#modalHitungIMT">Hitung Indeks Massa Tubuh</a></li>
                 <li><a href="<?php echo base_url('index.php/Controller_imt/statistik'); ?>">Lihat Statistik Pengguna</a></li>
                 <li><a href="<?php echo base_url('index.php/Controller_imt/about'); ?>">Tentang Kami</a></li>
             </ul>
         </div>
       </div>
-    </nav>
+      </nav>
     </header>
 
     <div id="fh5co-work-section" style="background-image: url(<?php echo base_url('assets'); ?>/images/back4.png);">
@@ -96,9 +97,7 @@
       </div>
     </footer>
 
-</body>
-
-<!-- Modal -->
+    <!-- Modal -->
         <div class="modal fade" id="modalHitungIMT" role="dialog">
             <div class="modal-dialog">
 
@@ -161,6 +160,10 @@
             </div>
         </div>
 
+</body>
+
+
+
 
   
   <!-- jQuery -->
@@ -178,12 +181,4 @@
 
   <!-- MAIN JS -->
   <script src="<?php echo base_url('assets'); ?>/js/main.js"></script>
-
-  <script>
-            $(document).ready(function () {
-                $("#hitungIMTHead").click(function () {
-                    $("#modalHitungIMT").modal();
-                });
-            });
-    </script>
 </html>  

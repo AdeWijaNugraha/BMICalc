@@ -42,7 +42,7 @@
 			    <ul class="nav navbar-nav">
 			    </ul>
 			    <ul class="nav navbar-nav navbar-right">
-			    	<li><a href="#" id="hitungIMTHead">Hitung Indeks Massa Tubuh</a></li>
+			    	<li><a href="#" data-toggle="modal" data-target="#modalHitungIMT">Hitung Indeks Massa Tubuh</a></li>
 			      	<li><a href="<?php echo base_url('index.php/Controller_imt/statistik'); ?>">Lihat Statistik Pengguna</a></li>
 			      	<li><a href="<?php echo base_url('index.php/Controller_imt/about'); ?>">Tentang Kami</a></li>
 			    </ul>
@@ -208,14 +208,6 @@
 
 	<!-- MAIN JS -->
 	<script src="<?php echo base_url('assets'); ?>/js/main.js"></script>
-
-	<script>
-            $(document).ready(function () {
-                $("#hitungIMTHead").click(function () {
-                    $("#modalHitungIMT").modal();
-                });
-            });
-    </script>
 
 	</body>
 </html>
